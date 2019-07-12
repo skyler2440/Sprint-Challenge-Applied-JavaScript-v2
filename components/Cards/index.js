@@ -58,9 +58,9 @@ function createCards(element){
 
     card.append(headline)
     card.append(author) 
-    imgCont.append(author)
-    imgSrc.append(imgCont)
-    authorName.append(author)
+    author.append(imgCont)
+    imgCont.append(imgSrc)
+    imgCont.append(authorName)
 
     card.classList.add('card')
     headline.classList.add('headline')
