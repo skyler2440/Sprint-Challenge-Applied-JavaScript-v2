@@ -8,7 +8,8 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-const tabs = document.querySelector('tabs');
+const tabs = document.querySelector('.topics');
+
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
   .then(res => {
@@ -16,23 +17,14 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     console.log('topics as array:', topics)
     topics.forEach(topic => {
         const topicList = topic;
-        console.log('topicList', topicList)})
-    })
-    .catch(error => {
-    // Handles failure:
-    console.log('The API is currently down, try again later', error)
-  })
-  function component(user)
-  {
-    
+        tabs.append(component(topicList))
+        console.log(topicList)
+        
+    })})
 
-const tab = document.createElement('div');
-tab.classList.add('topics')
-tab.textContent = topicList;
-console.log('topiclist2', topicList)
-
-
-
-return tab;
-
+    function component(topicList){
+        const tab = document.createElement('div')
+        tab.classList.add('tab')
+        tab.textContent = topicList
+        return tab
     }
