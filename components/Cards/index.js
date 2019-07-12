@@ -17,3 +17,34 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+    axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(res => {
+        console.log(res.data)
+        const articles = res.data
+       articles.array.forEach(element => {
+           console.log(element)
+       });
+    })
+function createCards(){
+    const card = document.createElement('div'),
+    headline = document.createElement('div'),
+    author = document.createElement('div'),
+    imgCont = document.createElement('div'),
+    imgSrc = document.createElement('img'),
+    authorName = document.createElement('span');
+
+    card.append(headline)
+    card.append(author) 
+    imgCont.append(author)
+    imgSrc.append(imgCont)
+    authorName.append(author)
+
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgCont.classList.add('image-container')
+    
+    // headline.textContent = 
+    // imgSrc.src = 
+    // authorName.textContent = `By: ${}`
+}
