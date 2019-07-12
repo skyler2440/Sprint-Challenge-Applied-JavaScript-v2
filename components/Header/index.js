@@ -8,7 +8,10 @@
 //    <span class="temp">98°</span>
 //  </div >
 // And add it to the DOM in the .headerContainer component
-// document.querySelector('header-container').append(header)
+
+const headerContainer = document.querySelector('header-container')
+
+headerContainer.appendChild(header)
 
 
 
